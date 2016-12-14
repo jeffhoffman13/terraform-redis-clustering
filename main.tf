@@ -68,7 +68,7 @@ resource "docker_container" "haproxy-redis-lb" {
 resource "null_resource" "haconfig" {
 
 	provisioner "local-exec" {
-		command = "echo \"${data.template_file.haproxy_config.rendered}\" > ./config/haproxy/haproxy.cfg"
+		command = "echo -n '${data.template_file.haproxy_config.rendered}' > ./config/haproxy/haproxy.cfg"
 	}
 
 	provisioner "local-exec" {

@@ -14,7 +14,7 @@ backend bk_redis
 	tcp-check send PING\r\n
 	tcp-check expect string +PONG
 	tcp-check send info\ replication\r\n
-	tcp-check expect string \#\ Replication\r\n
+	tcp-check expect string #\ Replication\r\n
 	tcp-check expect string role:master\r\n
 	tcp-check send QUIT\r\n
 	tcp-check expect string +OK
