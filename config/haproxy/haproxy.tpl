@@ -18,4 +18,4 @@ backend bk_redis
 	tcp-check expect string role:master\r\n
 	tcp-check send QUIT\r\n
 	tcp-check expect string +OK
-${join("\n", formatlist("\tserver %s %s:6379 check inter 1s", split(",", serverNames), split(",", serverIpAddresses)))}
+${join("\\n", formatlist("\\tserver %s %s:6379 check inter 1s", split(",", serverNames), split(",", serverIpAddresses)))}
